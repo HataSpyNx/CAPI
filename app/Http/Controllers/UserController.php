@@ -15,7 +15,7 @@ class UserController extends Controller
         foreach($users as $user) {
             $fechaNacimiento = new \DateTime($user->fecha_nacimiento);
             $hoy = new \DateTime();
-            $edad = $hoy->diff($fechaNacimiento);
+            $edad = $hoy->diff($fechaNacimiento, 'Y');
 
             $user->edad = $edad;
             $arregloUsuarios[] = $user;
