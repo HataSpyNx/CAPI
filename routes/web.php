@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/consulta', [UserController::class, 'consulta']);
+Route::get('/consulta', [UserController::class, 'consulta']);
