@@ -13,7 +13,13 @@ class UserController extends Controller
 
         $arregloUsuarios = [];
         foreach($users as $user) {
+            $fechaNacimiento = new \DateTime($user->fecha_nacimiento);
+            $hoy = new \DateTime();
+            $edad = $hoy->diff($fechaNacimiento);
+
+            $user->edad = $edad;
             $arregloUsuarios[] = $user;
+
         }
 
         return json_encode($arregloUsuarios);

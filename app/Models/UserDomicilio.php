@@ -19,4 +19,6 @@ class UserDomicilio extends Model
         'cp',
         'ciudad'
     ];
+
+    public $timestamps = false;
 }
